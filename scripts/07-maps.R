@@ -59,6 +59,8 @@ occs_sf <-
       y = 'y'),
     crs = 4326) 
   
+##creates shapefile from points
+
 tm_shape(occs_sf) +
   tm_grid() +
   tm_dots(
@@ -69,7 +71,7 @@ tm_shape(occs_sf) +
 # map 1 -------------------------------------------------------------------
 
 tmap_mode('plot')
-# tmap_mode('view')
+tmap_mode('view')
 
 abronia_usa <- 
   tm_shape(usa) +

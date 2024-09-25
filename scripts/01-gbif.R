@@ -15,9 +15,15 @@ key <-
 
 gbif_download <- 
   occ_download(
-    pred("taxonKey", key),format = "SIMPLE_CSV")
+    pred("taxonKey", key),format = "SIMPLE_CSV",
+    user = 'melanie.davis.22',
+    pwd = 'Myotis666',
+    email = 'melanie.davis@ucr.edu')
 
 occ_download_wait(gbif_download)
+
+gbif_download |> 
+  write_rds('data/raw/key.rds')
 
 gbif_download |> 
   read_rds(
